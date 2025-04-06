@@ -24,7 +24,7 @@ const SearchPage = () => {
 
       const { data: entrepreneurData, error: entrepreneurError } = await supabase
         .from("entrepreneur_profiles")
-        .select("id, company_name, preferred_industries");
+        .select("id, company_name,founder_name");
 
       if (investorError || entrepreneurError) {
         console.error("Error fetching data", investorError || entrepreneurError);
@@ -36,13 +36,15 @@ const SearchPage = () => {
         id: inv.id,
         name: inv.full_name,
         investorType: inv.investor_type,
-        preferredIndustries: inv.preferred_industries || [],
+        preferredIndustries: [],
       }));
+      console.log("Formatted investors:", formattedInvestors);
+
 
       const formattedEntrepreneurs = entrepreneurData.map((ent) => ({
         id: ent.id,
-        name: ent.company_name,
-        investorType: "Entrepreneur",
+        name: ent.founder_name,
+        investorType: ent.company_name,
         preferredIndustries: ent.preferred_industries || [],
       }));
 
