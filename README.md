@@ -78,7 +78,7 @@ This project is under the MIT License. Feel free to use and modify it.
 
 ## 🙌 Acknowledgements
 
-Originally bootstrapped using Lovable. Frontend enhanced and backend integrated by [@nitishkrtalukdar](https://github.com/nitishkrtalukdar).
+Frontend enhanced and backend integrated by [@nitishkrtalukdar](https://github.com/nitishkrtalukdar).
 ```
 
 ---
